@@ -1,0 +1,51 @@
+@use "variables" as *;
+
+// =========================
+// MIXIN PARA BOTONES
+// =========================
+
+@mixin boton {
+    padding: 10px 20px;
+    border-radius: $radio;
+    text-decoration: none;
+    transition: $transicion;
+    display: inline-block;
+    font-weight: bold;
+}
+
+// =========================
+// MIXIN PARA CENTRAR
+// =========================
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// =========================
+// MIXIN PARA TÍTULOS
+// =========================
+
+@mixin titulo {
+    font-family: $fuente-titulos;
+    color: $color-principal;
+}
+
+// =========================
+// MIXIN PARA SOMBRAS
+// =========================
+
+@mixin sombra {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+// =========================
+// MIXIN PARA IMÁGENES
+// =========================
+
+@mixin imagen-responsive {
+    width: 100%;
+    height: auto;
+    display: block;
+}

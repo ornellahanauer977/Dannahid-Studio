@@ -1,0 +1,35 @@
+@use "variables" as *;
+
+.header {
+    background-color: $color-secundario;
+    padding: $espaciado-medio;
+
+    h1 {
+        text-align: center;
+        color: $color-principal;
+        font-family: $fuente-titulos;
+        margin-bottom: $espaciado-medio;
+    }
+
+    .navbar ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: $espaciado-medio;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        a {
+            color: $color-texto;
+            text-decoration: none;
+            font-family: $fuente-principal;
+            font-weight: bold;
+            transition: $transicion;
+
+            &:hover {
+                color: $color-principal;
+            }
+        }
+    }
+}

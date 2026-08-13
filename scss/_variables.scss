@@ -1,0 +1,44 @@
+// =========================
+// COLORES
+// =========================
+
+$color-fondo: #DEA193;
+$color-principal: #7A3045;
+$color-secundario: #F3D6D0;
+$color-texto: #3A2525;
+$color-blanco: #FFFFFF;
+
+// =========================
+// TIPOGRAFÍA
+// =========================
+
+$fuente-principal: "Poppins", sans-serif;
+$fuente-titulos: "Cinzel", serif;
+
+// =========================
+// ESPACIADO
+// =========================
+
+$espaciado-pequeno: 10px;
+$espaciado-medio: 20px;
+$espaciado-grande: 40px;
+
+// =========================
+// BORDES
+// =========================
+
+$radio: 10px;
+
+// =========================
+// EFECTOS
+// =========================
+
+$transicion: 0.3s ease;
+
+// =========================
+// CLASE BASE PARA EXTEND
+// =========================
+
+.card {
+    border-radius: $radio;
+}

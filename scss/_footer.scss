@@ -1,0 +1,25 @@
+@use "variables" as *;
+
+.footer {
+    background-color: $color-principal;
+    color: $color-blanco;
+    text-align: center;
+    padding: $espaciado-grande $espaciado-medio;
+
+    p {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+    a{
+      color: $color-texto;
+      display: inline-block;
+      transition: 0.2s ease;
+    }
+
+    a:hover{
+      color: $color-secundario;
+      transform: scale(1.05);
+    }
+
+}

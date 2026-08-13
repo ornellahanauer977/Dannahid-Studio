@@ -1,0 +1,276 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "header";
+@use "gallery";
+@use "footer";
+@use "responsive";
+
+body {
+    background-color: $color-fondo;
+    font-family: $fuente-principal;
+    color: $color-texto;
+}
+
+h1,h2,h3 {
+    font-family: $fuente-titulos;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+.btn {
+    @include boton;
+
+    background-color: $color-principal;
+    color: $color-blanco;
+
+    padding: 12px 24px;
+    margin-right: 10px;
+    margin-top: 20px;
+
+    &:hover {
+        transform: translateY(-3px);
+        opacity: 0.9;
+    }
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $espaciado-grande;
+    position: relative;
+    padding: $espaciado-grande;
+    min-height: 70vh;
+
+    .hero-image {
+        max-width: 450px;
+        width: 100%;
+        transition: 0.4s ease;
+        animation: flotar 4s ease-in-out infinite;
+        z-index: 1; 
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+    }
+
+    .hero-content {
+        max-width: 500px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+        color: $color-principal;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        color: $color-principal;
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        margin-bottom: 20px;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+}
+
+.aboutme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $espaciado-grande;
+
+    padding: $espaciado-grande;
+
+    .aboutme-image {
+        flex-shrink: 0;
+
+        img {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+
+    .aboutme-content {
+        max-width: 500px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        align-items: flex-start;
+    }
+
+    h2 {
+        color: $color-principal;
+    }
+}
+
+    form {
+       max-width: 600px;
+       margin: 0 auto;
+       display: flex;
+       flex-direction: column;
+       gap: $espaciado-medio;
+}
+
+    label {
+       font-weight: bold;
+       color: $color-principal;
+}
+
+    input,
+    textarea {
+       padding: 12px;
+       border: 2px solid $color-secundario;
+       border-radius: $radio;
+       font-family: $fuente-principal;
+}
+
+    textarea {
+       min-height: 150px;
+       resize: vertical;
+}
+
+    section {
+       padding: $espaciado-grande;
+}
+
+.gallery,
+.aboutme,
+.sketchbook {
+
+    @extend .card;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: $radio;
+    margin: $espaciado-grande;
+    padding: $espaciado-grande;
+
+    @include sombra;
+} 
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes brillo {
+
+    0% {
+        opacity: 0.2;
+        transform: translateY(0px) scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-8px) scale(1.3);
+    }
+
+    100% {
+        opacity: 0.2;
+        transform: translateY(0px) scale(0.8);
+    }
+}
+
+@keyframes brillo-fondo {
+
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        radial-gradient(#fff8d6 1px, transparent 1px),
+        radial-gradient(#ffd78a 1.5px, transparent 1.5px);
+
+    background-size: 80px 80px, 120px 120px;
+
+    pointer-events: none;
+
+    opacity: 0.5;
+
+    animation: brillo-fondo 6s ease-in-out infinite;
+}
+
+// =========================
+// ESTRELLAS FLOTANTES
+// =========================
+
+.stars {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    span {
+        position: absolute;
+
+        color: white;
+        font-size: 20px;
+
+        animation: brillo 3s infinite ease-in-out;
+
+        text-shadow:
+        0 0 5px white,
+        0 0 10px white,
+        0 0 15px white;
+    }
+
+    span::before {
+        content: "✦";
+        content: "✧";
+    }
+
+    span:nth-child(1)  { top: 30px;  left: 100px; }
+    span:nth-child(2)  { top: 80px;  left: 300px; }
+    span:nth-child(3)  { top: 40px;  left: 600px; }
+    span:nth-child(4)  { top: 90px;  left: 900px; }
+
+    span:nth-child(5)  { top: 200px; left: 80px; }
+    span:nth-child(6)  { top: 180px; left: 500px; }
+    span:nth-child(7)  { top: 220px; left: 800px; }
+    span:nth-child(8)  { top: 170px; left: 1150px; }
+
+    span:nth-child(9)  { top: 400px; left: 120px; }
+    span:nth-child(10) { top: 450px; left: 700px; }
+    span:nth-child(11) { top: 500px; left: 1000px; }
+    span:nth-child(12) { top: 600px; left: 250px; }
+
+}
