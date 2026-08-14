@@ -1,27 +1,54 @@
 @media (max-width: 768px) {
 
+    .stars {
+    overflow: hidden;
+}
+
     .navbar ul {
         flex-direction: column;
         align-items: center;
     }
 
-    .gallery-container 
-    .sketchbook-container{
+    .gallery-container,
+    .sketchbook-container {
         grid-template-columns: 1fr;
     }
 
     .hero {
         flex-direction: column;
         text-align: center;
+        padding: 20px;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .hero-image {
+        max-width: 320px;
     }
 
     .aboutme {
         text-align: center;
         flex-direction: column;
+        padding: 20px;
     }
 
     .aboutme-content {
         align-items: center;
-}
+    }
+
+    .gallery,
+    .aboutme,
+    .sketchbook {
+        margin: 20px 10px;
+        padding: 25px 15px;
+    }
+
+    .gallery-container img,
+    .sketchbook-container img {
+        height: auto;
+        max-height: 450px;
+    }
 
 }

@@ -5,10 +5,15 @@
 @use "footer";
 @use "responsive";
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: $color-fondo;
     font-family: $fuente-principal;
     color: $color-texto;
+    overflow-x: hidden;
 }
 
 h1,h2,h3 {
@@ -41,6 +46,7 @@ section {
     justify-content: center;
     gap: $espaciado-grande;
     position: relative;
+    overflow: hidden;
     padding: $espaciado-grande;
     min-height: 70vh;
 

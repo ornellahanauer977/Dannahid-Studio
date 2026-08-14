@@ -125,29 +125,57 @@
 }
 
 @media (max-width: 768px) {
+  .stars {
+    overflow: hidden;
+  }
   .navbar ul {
     flex-direction: column;
     align-items: center;
   }
-  .gallery-container .sketchbook-container {
+  .gallery-container,
+  .sketchbook-container {
     grid-template-columns: 1fr;
   }
   .hero {
     flex-direction: column;
     text-align: center;
+    padding: 20px;
+  }
+  .hero h2 {
+    font-size: 36px;
+  }
+  .hero-image {
+    max-width: 320px;
   }
   .aboutme {
     text-align: center;
     flex-direction: column;
+    padding: 20px;
   }
   .aboutme-content {
     align-items: center;
   }
+  .gallery,
+  .aboutme,
+  .sketchbook {
+    margin: 20px 10px;
+    padding: 25px 15px;
+  }
+  .gallery-container img,
+  .sketchbook-container img {
+    height: auto;
+    max-height: 450px;
+  }
 }
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #DEA193;
   font-family: "Poppins", sans-serif;
   color: #3A2525;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -182,6 +210,7 @@ section {
   justify-content: center;
   gap: 40px;
   position: relative;
+  overflow: hidden;
   padding: 40px;
   min-height: 70vh;
 }
