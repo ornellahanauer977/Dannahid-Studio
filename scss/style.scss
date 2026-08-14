@@ -35,10 +35,6 @@ section {
     }
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-}
-
 .hero {
     display: flex;
     align-items: center;
@@ -137,6 +133,22 @@ section {
        border: 2px solid $color-secundario;
        border-radius: $radio;
        font-family: $fuente-principal;
+}
+
+    input:focus,
+textarea:focus {
+   outline: 3px solid $color-principal;
+   border-color: $color-principal;
+}
+
+input:valid,
+textarea:valid {
+   border-color: #5a8f5a;
+}
+
+input:invalid,
+textarea:invalid {
+   border-color: #b84a4a;
 }
 
     textarea {
@@ -254,7 +266,6 @@ body::before {
     }
 
     span::before {
-        content: "✦";
         content: "✧";
     }
 
